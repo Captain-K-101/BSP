@@ -39,18 +39,18 @@ const Header = () => {
       hasDropdown: true,
       dropdownItems: [
         { label: 'Self Help Kits', href: '/SelfHelp-Kit' },
-        { label: 'Kit Option 2', href: '/kit-option-2' },
-        { label: 'Kit Option 3', href: '/kit-option-3' }
+        { label: 'Kit Option 2', href: '/SelfHelp-Kit-2' },
+        { label: 'Kit Option 3', href: '/SelfHelp-Kit-3' }
       ]
     },
     { 
       label: 'Finance Clubs', 
-      href: '/finance-clubs',
+      href: '/FinanceClubs',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Club Option 1', href: '/club-option-1' },
-        { label: 'Club Option 2', href: '/club-option-2' },
-        { label: 'Club Option 3', href: '/club-option-3' }
+        { label: 'Club Option 1', href: '/FinanceClubs' },
+        { label: 'Club Option 2', href: '/FinanceClubs-2' },
+        { label: 'Club Option 3', href: '/FinanceClubs-3' }
       ]
     },
     { 
