@@ -197,7 +197,7 @@ const UniquePedagogy = () => {
     <img
         src="/effects/black.png"
         alt="black transition"
-        className='w-full block relative -top-20 z-0'
+        className='w-full block relative -top-8 z-0'
       />
     </> 
   );

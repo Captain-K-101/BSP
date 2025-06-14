@@ -168,7 +168,7 @@ export default function Testimonials() {
       <img
         src="/effects/yellow.png"
         alt="black transition"
-        className='w-[200%] block relative -top-20 z-0'
+        className='w-[200%] block relative -top-8 z-0'
       />
     </>
   );
