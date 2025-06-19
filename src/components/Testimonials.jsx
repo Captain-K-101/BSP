@@ -45,132 +45,133 @@ export default function Testimonials({
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <>
-      <div className="w-full bg-[#FBDD9C] px-12 ">
-        <div className="lg:px-12 mx-auto py-14 px-6 -mt-5 lg:-mt-22 xl:-mt-28 pt-30 min-h-[70vh] lg:min-h-[90vh] relative">
+    // <>
+    //   <div className="w-full bg-[#FBDD9C] px-12 ">
+    //     <div className="lg:px-12 mx-auto py-14 px-6 -mt-5 lg:-mt-22 xl:-mt-28 pt-30 min-h-[70vh] lg:min-h-[90vh] relative">
 
-          {/* Desktop Layout */}
-          <div className="hidden lg:grid grid-cols-2 gap-4 lg:gap-8 items-start h-full">
+    //       {/* Desktop Layout */}
+    //       <div className="hidden lg:grid grid-cols-2 gap-4 lg:gap-8 items-start h-full">
             
-            {/* Left Side - Title and Comment */}
-            <div className="flex flex-col items-start p-4">
-              {/* Title */}
-              <div className="mb-6">
-                <h2 className={`${mochiyPopOne.className} px-10 text-xl lg:text-7xl font-bold text-[#F15B52] mb-3 flex items-center gap-4 leading-tight`}>
-                  {title1}
-                  <img src={titleIcon} alt="Phone Icon" className="w-12 h-12 lg:w-25 lg:h-25" />
-                </h2>
-                <h3 className={`${mochiyPopOne.className} px-9 text-xl lg:text-7xl font-bold text-[#F15B52] leading-tight whitespace-nowrap mb-8`}>
-                  {title2}
-                </h3>
-              </div>
+    //         {/* Left Side - Title and Comment */}
+    //         <div className="flex flex-col items-start p-4">
+    //           {/* Title */}
+    //           <div className="mb-6">
+    //             <h2 className={`${mochiyPopOne.className} px-10 text-xl lg:text-7xl font-bold text-[#F15B52] mb-3 flex items-center gap-4 leading-tight`}>
+    //               {title1}
+    //               <img src={titleIcon} alt="Phone Icon" className="w-12 h-12 lg:w-25 lg:h-25" />
+    //             </h2>
+    //             <h3 className={`${mochiyPopOne.className} px-9 text-xl lg:text-7xl font-bold text-[#F15B52] leading-tight whitespace-nowrap mb-8`}>
+    //               {title2}
+    //             </h3>
+    //           </div>
 
-              {/* Comment Box - Below "Parents Approved" */}
-              <div className="bg-[#EF746C] text-white p-6 lg:p-10 rounded-2xl max-w-sm lg:max-w-md relative ml-auto lg:ml-80 mb-8">
-                <p className={`${poppins.className} text-sm lg:text-base mb-6 leading-relaxed`}>"{currentTestimonial.quote}"</p>
-                <p className={`${poppins.className} font-semibold text-xs lg:text-sm`}>— {currentTestimonial.author}</p>
-              </div>
-            </div>
+    //           {/* Comment Box - Below "Parents Approved" */}
+    //           <div className="bg-[#EF746C] text-white p-6 lg:p-10 rounded-2xl max-w-sm lg:max-w-md relative ml-auto lg:ml-80 mb-8">
+    //             <p className={`${poppins.className} text-sm lg:text-base mb-6 leading-relaxed`}>"{currentTestimonial.quote}"</p>
+    //             <p className={`${poppins.className} font-semibold text-xs lg:text-sm`}>— {currentTestimonial.author}</p>
+    //           </div>
+    //         </div>
 
-            {/* Right Side - Videos */}
-            <div className="flex justify-center lg:justify-start lg:pl-0 relative">
-              <div className="relative w-96 lg:w-[500px] h-[500px] lg:h-[600px]">
+    //         {/* Right Side - Videos */}
+    //         <div className="flex justify-center lg:justify-start lg:pl-0 relative">
+    //           <div className="relative w-96 lg:w-[500px] h-[500px] lg:h-[600px]">
                 
-                {/* Background Image */}
-                <div className="absolute top-20 right-10 w-52 lg:w-64 h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl bg-gray-300 transition-all duration-500 ease-in-out">
-                  <img 
-                    src={currentTestimonial.image} 
-                    alt="Phone thumbnail background"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+    //             {/* Background Image */}
+    //             <div className="absolute top-20 right-10 w-52 lg:w-64 h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl bg-gray-300 transition-all duration-500 ease-in-out">
+    //               <img 
+    //                 src={currentTestimonial.image} 
+    //                 alt="Phone thumbnail background"
+    //                 className="w-full h-full object-cover"
+    //               />
+    //             </div>
 
-                {/* Foreground Image */}
-                <div className="absolute top-0 left-10 w-60 lg:w-72 h-[450px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200 z-10 transition-all duration-500 ease-in-out">
-                  <img 
-                    src={currentTestimonial.image} 
-                    alt="Phone thumbnail foreground"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+    //             {/* Foreground Image */}
+    //             <div className="absolute top-0 left-10 w-60 lg:w-72 h-[450px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200 z-10 transition-all duration-500 ease-in-out">
+    //               <img 
+    //                 src={currentTestimonial.image} 
+    //                 alt="Phone thumbnail foreground"
+    //                 className="w-full h-full object-cover"
+    //               />
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
 
-          {/* Mobile Layout */}
-          <div className="lg:hidden flex flex-col">
+    //       {/* Mobile Layout */}
+    //       <div className="lg:hidden flex flex-col">
             
-            {/* Title */}
-            <div className="mb-8">
-              <h2 className={`${mochiyPopOne.className} text-3xl font-bold text-[#F15B52] mb-3 flex items-center gap-4 leading-tight`}>
-                {title1}
-                <img src={titleIcon} alt="Phone Icon" className="w-8 h-8" />
-              </h2>
-              <h3 className={`${mochiyPopOne.className} text-3xl font-bold text-[#F15B52] leading-tight mb-8`}>
-                {title2}
-              </h3>
-            </div>
+    //         {/* Title */}
+    //         <div className="mb-8">
+    //           <h2 className={`${mochiyPopOne.className} text-3xl font-bold text-[#F15B52] mb-3 flex items-center gap-4 leading-tight`}>
+    //             {title1}
+    //             <img src={titleIcon} alt="Phone Icon" className="w-8 h-8" />
+    //           </h2>
+    //           <h3 className={`${mochiyPopOne.className} text-3xl font-bold text-[#F15B52] leading-tight mb-8`}>
+    //             {title2}
+    //           </h3>
+    //         </div>
 
-            {/* Image/Video */}
-            <div className="flex justify-center mb-8">
-              <div className="relative w-64 h-80">
-                <div className="w-full h-4/5 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
-                  <img 
-                    src={currentTestimonial.image} 
-                    alt="Phone thumbnail"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+    //         {/* Image/Video */}
+    //         <div className="flex justify-center mb-8">
+    //           <div className="relative w-64 h-80">
+    //             <div className="w-full h-4/5 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+    //               <img 
+    //                 src={currentTestimonial.image} 
+    //                 alt="Phone thumbnail"
+    //                 className="w-full h-full object-cover"
+    //               />
+    //             </div>
+    //           </div>
+    //         </div>
 
-            <div className="bg-[#EF746C] text-white p-6 rounded-2xl mb-8">
-              <p className={`${poppins.className} text-sm mb-4 leading-relaxed`}>"{currentTestimonial.quote}"</p>
-              <p className={`${poppins.className} font-semibold text-xs`}>— {currentTestimonial.author}</p>
-            </div>
+    //         <div className="bg-[#EF746C] text-white p-6 rounded-2xl mb-8">
+    //           <p className={`${poppins.className} text-sm mb-4 leading-relaxed`}>"{currentTestimonial.quote}"</p>
+    //           <p className={`${poppins.className} font-semibold text-xs`}>— {currentTestimonial.author}</p>
+    //         </div>
 
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={handlePrev}
-                className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
+    //         <div className="flex justify-center gap-4">
+    //           <button
+    //             onClick={handlePrev}
+    //             className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
+    //           >
+    //             <ChevronLeft className="w-6 h-6" />
+    //           </button>
+    //           <button
+    //             onClick={handleNext}
+    //             className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
+    //           >
+    //             <ChevronRight className="w-6 h-6" />
+    //           </button>
+    //         </div>
+    //       </div>
 
-          {/* Bottom Controls - Desktop only */}
-          <div className="hidden lg:flex absolute bottom-16 left-1/2 transform -translate-x-1/2 flex-col items-center gap-6">
-            <div className="flex gap-4">
-              <button
-                onClick={handlePrev}
-                className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    //       {/* Bottom Controls - Desktop only */}
+    //       <div className="hidden lg:flex absolute bottom-16 left-1/2 transform -translate-x-1/2 flex-col items-center gap-6">
+    //         <div className="flex gap-4">
+    //           <button
+    //             onClick={handlePrev}
+    //             className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
+    //           >
+    //             <ChevronLeft className="w-6 h-6" />
+    //           </button>
+    //           <button
+    //             onClick={handleNext}
+    //             className="p-3 rounded-full bg-white text-black shadow-lg hover:shadow-xl transition-shadow"
+    //           >
+    //             <ChevronRight className="w-6 h-6" />
+    //           </button>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
-      {/* Decorative Transition Image */}
-      <img
-        src="/effects/yellow.png"
-        alt="black transition"
-        className='w-[200%] block relative -top-7 z-20'
-      />
-    </>
+    //   {/* Decorative Transition Image */}
+    //   <img
+    //     src="/effects/yellow.png"
+    //     alt="black transition"
+    //     className='w-[200%] block relative -top-7 z-20'
+    //   />
+    // </>
+    <></>
   );
 }
