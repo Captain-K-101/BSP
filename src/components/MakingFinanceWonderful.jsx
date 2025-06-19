@@ -57,7 +57,7 @@ export default function MakingFinanceWonderful() {
       title: "Non-Tech Training",
       description: "Kids & teens deserve a human connection. We don't use generalized apps or tech-based tools for learning. We provide instructor-led personalized training only.",
       bgColor: "bg-[#39BB9C]",
-      iconSrc: "./home_page_assets/1/Group 26.svg",
+      iconSrc: "./home_page_assets/1/Group 26.png",
       iconAlt: "Non-Tech Training Icon"
     },
     {
@@ -86,13 +86,13 @@ export default function MakingFinanceWonderful() {
           <div className="flex-1 lg:max-w-md">
             <div className="relative h-40 sm:h-auto">
               {/* Piggy Bank Icon */}
-              <div className="-top-20 left-35 w-25 h-25 lg:w-30 lg:h-30">
-                <img
-                  src="./home_page_assets/1/pig.png"
-                  alt="Piggy Bank"
-                  className="w-full h-full object-contain text-[#088F99]"
-                />
-              </div>
+              <div className="-top-20 ml-8 w-25 h-25 lg:w-30 lg:h-30">
+              <img
+                src="./home_page_assets/1/pig.png"
+                alt="Piggy Bank"
+                className="w-full h-full object-contain text-[#088F99]"
+              />
+            </div>
 
               {/* Main Title - Mobile on 2 lines */}
               <div className={`${PopOne.className} ml-0 lg:ml-12`}>

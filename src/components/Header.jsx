@@ -1,11 +1,14 @@
 "use client"
 import React, { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, Check } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import BlackLogoWithText from './blacklogo';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const pathname = usePathname();
 
   const navigationItems = [
     { 
@@ -13,14 +16,14 @@ const Header = () => {
       href: '/for-kids',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Value of Money', href: '/value-of-money' },
-        { label: 'Budgeting', href: '/budgeting' },
-        { label: 'Banking Essentials', href: '/banking-essentials' },
-        { label: 'Everyday Banking', href: '/everyday-banking' },
-        { label: 'Credit Concepts', href: '/credit-concepts' },
-        { label: 'Financial Goals', href: '/financial-goals' },
-        { label: 'Financial Growth', href: '/financial-growth' },
-        { label: 'Financial Wisdom', href: '/financial-wisdom' }
+        { label: 'Value of Money', href: '/kids/value-of-money' },
+        { label: 'Budgeting', href: '/kids/budgeting' },
+        { label: 'Banking Essentials', href: '/kids/banking-essentials' },
+        { label: 'Everyday Banking', href: '/kids/everyday-banking' },
+        { label: 'Credit Concepts', href: '/kids/credit-concepts' },
+        { label: 'Financial Goals', href: '/kids/financial-goals' },
+        { label: 'Financial Growth', href: '/kids/financial-growth' },
+        { label: 'Financial Wisdom', href: '/kids/financial-wisdom' }
       ]
     },
     { 
@@ -28,9 +31,14 @@ const Header = () => {
       href: '/for-teens',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Teen Option 1', href: '/teen-option-1' },
-        { label: 'Teen Option 2', href: '/teen-option-2' },
-        { label: 'Teen Option 3', href: '/teen-option-3' }
+        { label: 'Value of Money', href: '/for-teens/value-of-money' },
+        { label: 'Banking Essentials', href: '/for-teens/banking-essentials' },
+        { label: 'Credit Concepts', href: '/for-teens/credit-concepts' },
+        { label: 'Financial Freedom', href: '/for-teens/financial-freedom' },
+        { label: 'Financial Excellence', href: '/for-teens/financial-excellence' },
+        { label: 'Risks & Insurance', href: '/for-teens/risks-insurance' },
+        { label: 'Financial Wisdom', href: '/for-teens/financial-wisdom' },
+        { label: 'Buisness Basics', href: '/for-teens/buisness-basics' },
       ]
     },
     { 
@@ -38,9 +46,8 @@ const Header = () => {
       href: '/SelfHelp-Kit',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Self Help Kits', href: '/SelfHelp-Kit' },
-        { label: 'Kit Option 2', href: '/SelfHelp-Kit-2' },
-        { label: 'Kit Option 3', href: '/SelfHelp-Kit-3' }
+        { label: 'Financial Literacy Kit', href: '/SelfHelp-Kit' },
+        { label: 'Business Literacy Kit', href: '/Business-SelfHelp-Kit' },
       ]
     },
     { 
@@ -48,9 +55,8 @@ const Header = () => {
       href: '/FinanceClubs',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Club Option 1', href: '/FinanceClubs' },
-        { label: 'Club Option 2', href: '/FinanceClubs-2' },
-        { label: 'Club Option 3', href: '/FinanceClubs-3' }
+        { label: 'Kids’ Club', href: '/FinanceClubs' },
+        { label: 'Teens’ Club', href: '/FinanceClubs-Teens' }
       ]
     },
     { 
@@ -58,9 +64,8 @@ const Header = () => {
       href: '/downloads',
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Download Option 1', href: '/download-option-1' },
-        { label: 'Download Option 2', href: '/download-option-2' },
-        { label: 'Download Option 3', href: '/download-option-3' }
+        { label: 'Lunchbox Notes', href: '/#' },
+        { label: 'Spread the Word', href: '/#' },
       ]
     },
   ];
@@ -72,6 +77,22 @@ const Header = () => {
 
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const isActivePage = (href) => {
+    return pathname === href;
+  };
+
+  const getTextStyle = (href) => {
+    if (isActivePage(href)) {
+      return {
+        background: 'linear-gradient(107deg, #08A69A 0%, #0ABE9D 54%, #69C9A1 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text'
+      };
+    }
+    return {};
   };
 
   return (
@@ -95,10 +116,14 @@ const Header = () => {
           {/* Logo - centered on mobile, left on desktop */}
           <div className="flex items-center lg:flex-none">
             <div className="lg:hidden">
-              <BlackLogoWithText logoHeight={50} textHeight={130} />
+              <Link href="/">
+                <BlackLogoWithText logoHeight={50} textHeight={130} />
+              </Link>
             </div>
             <div className="hidden lg:block">
-              <BlackLogoWithText logoHeight={100} textHeight={200} />
+              <Link href="/">
+                <BlackLogoWithText logoHeight={80} textHeight={200} />
+              </Link>
             </div>
           </div>
 
@@ -107,6 +132,13 @@ const Header = () => {
             <button className="border border-white text-white px-4 py-1.5 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-medium text-sm">
               Call us
             </button>
+            {/* Phone number tooltip for mobile */}
+            <div className="absolute top-full right-0 mt-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 whitespace-nowrap">
+              +91-8928557529
+              {/* Arrow pointing up */}
+              <div className="absolute bottom-full right-4 w-0 h-0 border-l-4 border-r-4 border-b-4 border-l-transparent border-r-transparent border-b-gray-800"></div>
+          </div>
+
           </div>
 
           {/* Desktop Navigation */}
@@ -117,23 +149,41 @@ const Header = () => {
                 {navigationItems.map((item, index) => (
                   <div key={index} className="relative group">
                     <button className="flex items-center text-white px-5 py-2 rounded-full hover:bg-gray-500/70 transition-colors duration-200">
-                      <span className="font-medium text-base whitespace-nowrap">{item.label}</span>
+                      <span 
+                        className="font-medium text-base whitespace-nowrap flex items-center"
+                        style={getTextStyle(item.href)}
+                      >
+                        {item.label}
+                        {isActivePage(item.href) && (
+                          <Check className="ml-2 h-4 w-4" style={getTextStyle(item.href)} />
+                        )}
+                      </span>
                       {item.hasDropdown && (
                         <ChevronDown className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                       )}
                     </button>
                     {/* Dropdown */}
                     {item.hasDropdown && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-[#3a4048] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-600">
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-[#343434] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-600">
                         <div className="py-2">
                           {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                            <a 
-                              key={dropdownIndex}
-                              href={dropdownItem.href} 
-                              className="flex items-center px-4 py-3 text-gray-200 hover:bg-gray-600/70 hover:text-white transition-colors duration-200 text-sm"
-                            >
-                              {dropdownItem.label}
-                            </a>
+                            <React.Fragment key={dropdownIndex}>
+                              <a 
+                                href={dropdownItem.href} 
+                                className="flex items-center px-4 py-3 text-gray-200 hover:bg-gray-600/70 hover:text-white transition-colors duration-200 text-sm"
+                              >
+                                <span className="flex items-center" style={getTextStyle(dropdownItem.href)}>
+                                  {dropdownItem.label}
+                                  {isActivePage(dropdownItem.href) && (
+                                    <Check className="ml-2 h-3 w-3" style={getTextStyle(dropdownItem.href)} />
+                                  )}
+                                </span>
+                              </a>
+                              {/* Line separator - don't show after last item */}
+                              {dropdownIndex < item.dropdownItems.length - 1 && (
+                                <div className="mx-4 border-b border-gray-600/50"></div>
+                              )}
+                            </React.Fragment>
                           ))}
                         </div>
                       </div>
@@ -142,9 +192,16 @@ const Header = () => {
                 ))}
               </nav>
               
-              <button className="ml-3 border border-white text-white px-5 py-2 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-medium text-base">
-                Call us
-              </button>
+              <div className="relative group">
+                <button className="ml-3 border border-white text-white px-5 py-2 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 font-medium text-base">
+                  Call us
+                </button>
+                {/* Phone number tooltip */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-3 bg-[#343434] text-white text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap border border-gray-600 shadow-xl z-50">
+                  +91-8928557529
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-l-transparent border-r-transparent border-b-gray-600"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +221,15 @@ const Header = () => {
                       onClick={() => item.hasDropdown && toggleDropdown(index)}
                       className="flex items-center justify-between w-full text-left text-white hover:text-gray-300 hover:bg-gray-600/50 px-3 py-3 rounded-md transition-colors duration-200"
                     >
-                      <span className="font-medium whitespace-nowrap">{item.label}</span>
+                      <span 
+                        className="font-medium whitespace-nowrap flex items-center"
+                        style={getTextStyle(item.href)}
+                      >
+                        {item.label}
+                        {isActivePage(item.href) && (
+                          <Check className="ml-2 h-4 w-4" style={getTextStyle(item.href)} />
+                        )}
+                      </span>
                       {item.hasDropdown && (
                         <ChevronDown 
                           className={`h-4 w-4 transition-transform duration-200 ${
@@ -176,13 +241,23 @@ const Header = () => {
                     {item.hasDropdown && activeDropdown === index && (
                       <div className="pl-6 space-y-1 bg-[#2d333a] rounded-lg ml-2 mr-2 py-2">
                         {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
-                          <a 
-                            key={dropdownIndex}
-                            href={dropdownItem.href} 
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-600/50 px-3 py-2 rounded-md transition-colors duration-200"
-                          >
-                            {dropdownItem.label}
-                          </a>
+                          <React.Fragment key={dropdownIndex}>
+                            <a 
+                              href={dropdownItem.href} 
+                              className="flex items-center text-gray-300 hover:text-white hover:bg-gray-600/50 px-3 py-2 rounded-md transition-colors duration-200"
+                            >
+                              <span className="flex items-center" style={getTextStyle(dropdownItem.href)}>
+                                {dropdownItem.label}
+                                {isActivePage(dropdownItem.href) && (
+                                  <Check className="ml-2 h-3 w-3" style={getTextStyle(dropdownItem.href)} />
+                                )}
+                              </span>
+                            </a>
+                            {/* Line separator - don't show after last item */}
+                            {dropdownIndex < item.dropdownItems.length - 1 && (
+                              <div className="mx-3 border-b border-gray-600/50"></div>
+                            )}
+                          </React.Fragment>
                         ))}
                       </div>
                     )}

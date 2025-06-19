@@ -107,7 +107,7 @@ export default function MeetTheFounderSection() {
       <img
         src="/effects/black.png"
         alt="black transition"
-        className='w-full block relative -top-12 z-20'
+        className='w-full block relative -top-8 z-20'
       />
     </> 
   );
